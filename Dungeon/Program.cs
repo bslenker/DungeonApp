@@ -16,13 +16,13 @@ namespace Dungeon
         {
             SpeechSynthesizer synthesizer = new SpeechSynthesizer();
             synthesizer.Volume = 100;  // 0...100
-            synthesizer.Rate = -2;     // -10...10
+            synthesizer.Rate = -1;     // -10...10
 
             // Synchronous
             synthesizer.Speak("Would you like to play a game?");
 
             // Asynchronous
-            //synthesizer.SpeakAsync("Hello World");
+            //synthesizer.SpeakAsync("texttt");
 
 
             Console.WriteLine("Welcome to the deep, dark depths of Enlil's underworld.");
@@ -30,8 +30,9 @@ namespace Dungeon
             Console.Title = "Welcome to the Dungeon of Enlil!";
 
             int score = 0;
-            synthesizer.Speak("Please enter your name!");
+            synthesizer.SpeakAsync("Please enter your name!");
             Console.WriteLine("Please enter your name!");
+            
             string heroName = Console.ReadLine();//player gets to enter their name...
 
             Race heroRace;
@@ -138,7 +139,7 @@ namespace Dungeon
 
                 do
                 {
-                    synthesizer.Speak("Please choose an action");
+                    //synthesizer.Speak("Please choose an action");
                     Console.Write("\nPlease choose an action:\n" +
                         "A)ttack\n" +
                         "F)lee\n" +
